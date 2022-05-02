@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 
+function openFile() {
+  window.electronAPI.openFile();
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -11,6 +15,9 @@ function App() {
         <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
+          </button>
+          <button type="button" onClick={openFile}>
+            openFile
           </button>
         </p>
         <p>
@@ -25,7 +32,7 @@ function App() {
           >
             Learn React
           </a>
-          {' | '}
+          {" | "}
           <a
             className="App-link"
             href="https://vitejs.dev/guide/features.html"
@@ -37,7 +44,7 @@ function App() {
         </p>
       </header>
     </div>
-  )
+  );
 }
 
 export default App

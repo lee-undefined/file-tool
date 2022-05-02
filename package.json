@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "description": "tool",
-  "main": "main.js",
+  "main": "./tsconfig/main.js",
   "author": "lixb",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "electron-forge start",
+    "start": "tsc -p ./electrontsconfig.json && electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
