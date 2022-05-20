@@ -6,10 +6,14 @@ import { DatePicker, Button } from "antd";
 function openFile() {
   window.electronAPI.openFile();
 }
+async function percentCPUUsage() {
+  const cpu = await window.electronAPI.percentCPUUsage();
+  console.log(cpu);
+}
 
 function App() {
   const [count, setCount] = useState(0);
-
+  percentCPUUsage()
   return (
     <div className="App">
       <header className="App-header">
